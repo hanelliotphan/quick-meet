@@ -17,7 +17,10 @@
 #                               IMPORT LIBRARIES                               #
 # ---------------------------------------------------------------------------- #
 
+import logging
 import huggingface_hub
+import sys
+
 from openai import OpenAI
 
 
@@ -31,7 +34,12 @@ def hf_login(token):
 
     Documentation: https://huggingface.co/docs/huggingface_hub/en/package_reference/authentication#huggingface_hub.login
     """
-    huggingface_hub.login(token=token)
+    try:
+        huggingface_hub.login(token=token)
+        logging.info(msg=f"[main.py] Successfully logged in to Hugging Face.")
+    except Exception as e:
+        logging.critical(msg=f"[main.py] Cannot log in to Hugging Face. Error message: {e}")
+        sys.exit(-1)
 
 
 def openai_login(api_key):
@@ -40,4 +48,11 @@ def openai_login(api_key):
 
     Documentation: https://platform.openai.com/docs/quickstart
     """
-    return OpenAI(api_key=api_key)
+    openai_client = OpenAI(api_key=api_key)
+    try:
+        openai_client.models.list()
+        logging.info(msg="[main.py] Successfully logged in to OpenAI")
+    except Exception as e:
+        logging.critical(msg=f"[main.py] Cannot log in to OpenAI. Error message: {e}")
+        sys.exit(-1)
+    return openai_client
