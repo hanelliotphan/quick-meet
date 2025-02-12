@@ -55,7 +55,7 @@ $ python ./quick-meet/src/main.py --f <your audio filepath>
 ```
 
 where
-- `--f / --audio-filepath` (required): The filepath of the audio to analyze and generate the list of action items.
+- `--f / --audio_filepath` (required): The filepath of the audio to analyze and generate the list of action items.
 
 ## Dedication
 I dedicate this hard-work commitment to myself, my mother, my best friend Ha-Phuong and those that have imprinted in my heart. I hope that I have made you all truly proud of me.
