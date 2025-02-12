@@ -88,7 +88,7 @@ def main():
     audio_filepath = args.audio_filepath
     audio_model = "whisper-1"
     llama3_model = "meta-llama/Meta-Llama-3.1-8B-Instruct"
-    output_filepath = "transcript.md"
+    output_filepath = "./research/media/transcript.md"
    
     # QuickMeet Streamline
     main_streamline(
@@ -96,7 +96,8 @@ def main():
         openai_api_key=openai_api_key,
         audio_filepath=audio_filepath,
         audio_model=audio_model,
-        generative_model_type=llama3_model
+        generative_model_type=llama3_model,
+        output_filepath=output_filepath
     )
 
 
