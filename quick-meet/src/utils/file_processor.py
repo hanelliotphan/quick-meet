@@ -28,6 +28,9 @@ import sys
 # ---------------------------------------------------------------------------- #
 
 def process_audio_file(audio_filepath, audio_model):
+    """
+    process_audio_file -- Process audio file using the selected OpenAI audio model
+    """
     audio = open(audio_filepath, "rb")
     try:
         logging.info(msg=f"[file_processor.py] process_audio_file: Processing the audio file '{audio_filepath}'...")
