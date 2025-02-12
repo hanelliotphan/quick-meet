@@ -24,7 +24,11 @@ For more information about the model, please read the following documentation
 
 ## Instructions of Use
 
-First, the API keys for Hugging Face and OpenAI are required. Please ensure that 
+First, this project requires GPU instances to run. If you are using a Macbook, 
+please ensure that you are having eGPUs (through Thunderbolt) installed, or use 
+an online platform that has GPUs installed, i.e. Google Colab.
+
+Second, the API keys for Hugging Face and OpenAI are required. Please ensure that 
 you have created an account for both of these products, and generate an API 
 token from your account settings.
 

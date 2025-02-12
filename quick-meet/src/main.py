@@ -17,18 +17,11 @@
 # ---------------------------------------------------------------------------- #
 
 import argparse
-import logging
 import os
-import requests
-import sys
-import torch
-
-from IPython.display import display, Markdown, update_display
-from huggingface_hub import login
-from transformers import AutoTokenizer, AutoModelForCausalLM, TextStreamer, BitsAndBytesConfig
 
 from utils.login import hf_login, openai_login
-from utils.file_processor import process_audio_file
+from utils.file_processor import process_audio_file, generate_output_file
+from models.llama3 import configure_quantization, generate_outputs
 
 
 # ---------------------------------------------------------------------------- #
@@ -39,7 +32,9 @@ def main_streamline(
     hf_token, 
     openai_api_key,
     audio_filepath,
-    audio_model
+    audio_model,
+    generative_model_type,
+    output_filepath
 ):
     """
     main_streamline -- Streamline the end-to-end process of the Quick-Meet 
@@ -54,6 +49,26 @@ def main_streamline(
         audio_filepath=audio_filepath,
         audio_model=audio_model
     )
+
+    # Set up prompt
+    system_msg = "I am an assistant that takes in an audio transcript and then provides summary, key discussion points, takeaways and list of action items"
+    user_prompt = "Here is a meeting audio transcript. Please provide the location, date and summary of the meeting with attendees, and list of action items accoridingly: ", transcript
+    messages = [
+        {"role": "system", "content": system_msg},
+        {"role": "user", "content": user_prompt}
+    ]
+
+    # Configure quantization and generate outputs
+    quant_config = configure_quantization()
+    outputs = generate_outputs(
+        audio_filepath=audio_filepath,
+        model_type=generative_model_type,
+        prompt=messages,
+        quant_config=quant_config
+    )
+    
+    # Write outputs to Markdown file
+    generate_output_file(filepath=output_filepath, output=outputs)
 
 
 def main():
@@ -72,13 +87,16 @@ def main():
     openai_api_key = os.environ.get(openai_api_key_var)
     audio_filepath = args.audio_filepath
     audio_model = "whisper-1"
+    llama3_model = "meta-llama/Meta-Llama-3.1-8B-Instruct"
+    output_filepath = "transcript.md"
    
     # QuickMeet Streamline
     main_streamline(
         hf_token=hf_token, 
         openai_api_key=openai_api_key,
         audio_filepath=audio_filepath,
-        audio_model=audio_model
+        audio_model=audio_model,
+        generative_model_type=llama3_model
     )
 
 

@@ -39,7 +39,16 @@ def process_audio_file(audio_filepath, audio_model):
             file=audio,
             response_format="text"
         )
+        logging.info(msg=f"[file_processor.py] process_audio_file: Successfully generated transcription from the audio file '{audio_filepath}'...") 
         return transcript
     except Exception as e:
         logging.critical(msg=f"[file_processor.py] process_audio_file: Cannot generate transcript from audio file '{audio_filepath}'. Error message: {e}")
         sys.exit(-1)
+
+
+def generate_output_file(filepath, output):
+    """
+    generate_output_file -- Write output to file
+    """
+    with open(filepath, "w") as f:
+        f.write(output)
