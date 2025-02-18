@@ -2,7 +2,7 @@
 # Author: Han-Elliot Phan                                                      #
 # Email: hanelliotphan@gmail.com                                               #
 #                                                                              #
-# Last update: February 11, 2025                                               #
+# Last update: February 18, 2025                                               #
 # ---------------------------------------------------------------------------- #
 
 # ---------------------------------------------------------------------------- #
@@ -88,7 +88,7 @@ def main():
     audio_filepath = args.audio_filepath
     audio_model = "whisper-1"
     llama3_model = "meta-llama/Meta-Llama-3.1-8B-Instruct"
-    output_filepath = "./research/media/transcript.md"
+    output_filepath = "./transcript.md"
    
     # QuickMeet Streamline
     main_streamline(
