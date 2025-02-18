@@ -62,3 +62,7 @@ in the current directory.
 
 ## Dedication
 I dedicate this hard-work commitment to myself, my mother, my best friend Ha-Phuong and those that have imprinted in my heart. I hope that I have made you all truly proud of me.
+
+## References
+- [OpenAI's Whisper-1 Model](https://platform.openai.com/docs/guides/speech-to-text)
+- [Meta's Llama-3 Model](https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct)
