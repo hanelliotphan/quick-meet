@@ -4,7 +4,7 @@
 Author: Han-Elliot Phan
 Email: hanelliotphan@gmail.com
 
-Last Update: February 11, 2025
+Last Update: February 18, 2025
 ```
 
 ## Brief Discussion
@@ -56,6 +56,9 @@ where
 - `--f / --audio_filepath` (required): The filepath of the audio to analyze and generate the list of action items.
 
 Note: The audio file must not exceed 25MB per the size limit for OpenAI's Whisper model.
+
+You will find the `transcript.md` file with all the summary, keynotes, takeaways and list of action items located 
+in the current directory.
 
 ## Dedication
 I dedicate this hard-work commitment to myself, my mother, my best friend Ha-Phuong and those that have imprinted in my heart. I hope that I have made you all truly proud of me.
