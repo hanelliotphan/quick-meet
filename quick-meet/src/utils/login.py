@@ -2,7 +2,7 @@
 # Author: Han-Elliot Phan                                                      #
 # Email: hanelliotphan@gmail.com                                               #
 #                                                                              #
-# Last update: February 11, 2025                                               #
+# Last update: February 18, 2025                                               #
 # ---------------------------------------------------------------------------- #
 
 # ---------------------------------------------------------------------------- #
@@ -36,9 +36,9 @@ def hf_login(token):
     """
     try:
         huggingface_hub.login(token=token)
-        logging.info(msg=f"[main.py] Successfully logged in to Hugging Face.")
+        logging.info(msg=f"[login.py] hf_login: Successfully logged in to Hugging Face.")
     except Exception as e:
-        logging.critical(msg=f"[main.py] Cannot log in to Hugging Face. Error message: {e}")
+        logging.critical(msg=f"[login.py] hf_login: Cannot log in to Hugging Face. Error message: {e}")
         sys.exit(-1)
 
 
@@ -51,8 +51,8 @@ def openai_login(api_key):
     openai_client = OpenAI(api_key=api_key)
     try:
         openai_client.models.list()
-        logging.info(msg="[main.py] Successfully logged in to OpenAI")
+        logging.info(msg="[login.py] openai_login: Successfully logged in to OpenAI")
     except Exception as e:
-        logging.critical(msg=f"[main.py] Cannot log in to OpenAI. Error message: {e}")
+        logging.critical(msg=f"[login.py] openai_login: Cannot log in to OpenAI. Error message: {e}")
         sys.exit(-1)
     return openai_client
