@@ -32,8 +32,8 @@ token from your account settings.
 
 After having the two required API tokens, please run the following command:
 ```bash
-$ export OPENAI_API_KEY = <you OpenAI API key>
-$ export HF_TOKEN = <your Hugging Face API token>
+$ export OPENAI_API_KEY=<you OpenAI API key>
+$ export HF_TOKEN=<your Hugging Face API token>
 ```
 
 Second, since this project utilizes the Meta's Llama-3.1 model from Hugging Face, 
