@@ -4,7 +4,7 @@
 Author: Han-Elliot Phan
 Email: hanelliotphan@gmail.com
 
-Last Update: February 18, 2025
+Last Update: February 20, 2025
 ```
 
 ## Brief Discussion
@@ -33,7 +33,7 @@ token from your account settings.
 After having the two required API tokens, please run the following command:
 ```bash
 $ export OPENAI_API_KEY = <you OpenAI API key>
-$ export HF_TOKeN = <your Hugging Face API token>
+$ export HF_TOKEN = <your Hugging Face API token>
 ```
 
 Second, since this project utilizes the Meta's Llama-3.1 model from Hugging Face, 
