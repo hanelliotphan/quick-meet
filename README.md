@@ -9,7 +9,7 @@ Last Update: February 20, 2025
 
 ## Brief Discussion
 This project is to create summary, keynotes, takeaways and list of action items 
-from meeting audios using Python and Llama-3 model.
+from meeting audios using Python, Meta's Llama-3 and OpenAI's Whisper-1 models.
 
 ## Architecture
 This project uses the OpenAI's Whisper-1 model for audio-to-text transcription, 
