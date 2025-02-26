@@ -1,4 +1,4 @@
-# QuickMeet - Create List of Action Items from Meeting Transcriptions
+# QuickMeet - Create a List of Action Items from Meeting Audios
 
 ```bash
 Author: Han-Elliot Phan
