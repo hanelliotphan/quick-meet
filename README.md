@@ -4,7 +4,7 @@
 Author: Han-Elliot Phan
 Email: hanelliotphan@gmail.com
 
-Last Update: February 20, 2025
+Last Update: March 1, 2025
 ```
 
 ## Brief Discussion
@@ -36,7 +36,7 @@ $ export OPENAI_API_KEY=<you OpenAI API key>
 $ export HF_TOKEN=<your Hugging Face API token>
 ```
 
-Second, since this project utilizes the Meta's Llama-3.1 model from Hugging Face, 
+Third, since this project utilizes the Meta's Llama-3.1 model from Hugging Face, 
 you need to be added to all the Meta's Llama repositories. Please go to 
 [this repository](https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct) and 
 on top of the page, fill in the information and wait for approval (in my case, 
@@ -58,7 +58,7 @@ where
 Note: The audio file must not exceed 25MB per the size limit for OpenAI's Whisper model.
 
 You will find the `transcript.md` file with all the summary, keynotes, takeaways and list of action items located 
-in the `files` directory.
+in the `./files` directory.
 
 ## Dedication
 I dedicate this hard-work commitment to myself, my mother, my best friend Ha-Phuong and those that have imprinted 
